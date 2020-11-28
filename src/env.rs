@@ -3,7 +3,7 @@ use alloc::{format, string::String};
 use hashbrown::HashMap;
 
 #[derive(Debug, PartialEq, Default)]
- pub struct Env<'parent> {
+pub struct Env<'parent> {
     bindings: HashMap<String, Val>,
     parent: Option<&'parent Self>,
 }

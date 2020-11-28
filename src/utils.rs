@@ -34,7 +34,7 @@ pub fn extract_ident(s: &str) -> Result<(&str, &str), String> {
     }
 }
 
- fn take_while(accept: impl Fn(char) -> bool, s: &str) -> (&str, &str) {
+fn take_while(accept: impl Fn(char) -> bool, s: &str) -> (&str, &str) {
     let digits_end = s
         .char_indices()
         .find_map(|(index, c)| if accept(c) { None } else { Some(index) })
@@ -43,11 +43,7 @@ pub fn extract_ident(s: &str) -> Result<(&str, &str), String> {
     (&s[digits_end..], &s[..digits_end])
 }
 
- fn take_while1(
-    accept: impl Fn(char) -> bool,
-    s: &str,
-    em: String,
-) -> Result<(&str, &str), String> {
+fn take_while1(accept: impl Fn(char) -> bool, s: &str, em: String) -> Result<(&str, &str), String> {
     let (remainder, extracted) = take_while(accept, s);
 
     if extracted.is_empty() {

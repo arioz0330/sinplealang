@@ -4,11 +4,11 @@
 extern crate alloc;
 
 mod binding_def;
+mod env;
 mod expr;
 mod stmt;
-mod val;
-mod env;
 mod utils;
+mod val;
 
 pub use env::Env;
 pub use val::Val;
