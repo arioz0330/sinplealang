@@ -3,7 +3,7 @@ use alloc::{string::String, vec, vec::Vec};
 
 #[derive(Debug, PartialEq)]
 pub struct Block {
-     stmts: Vec<Stmt>,
+    pub stmts: Vec<Stmt>,
 }
 
 impl Block {

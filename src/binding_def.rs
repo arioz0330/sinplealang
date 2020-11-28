@@ -3,8 +3,8 @@ use alloc::string::{String, ToString};
 
 #[derive(Debug, PartialEq)]
 pub struct BindingDef {
-     name: String,
-     val: Expr,
+    pub name: String,
+    pub val: Expr,
 }
 
 impl BindingDef {

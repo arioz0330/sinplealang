@@ -3,7 +3,7 @@ use alloc::string::{String, ToString};
 
 #[derive(Debug, PartialEq)]
 pub struct BindingUsage {
-     name: String,
+    pub name: String,
 }
 
 impl BindingUsage {
