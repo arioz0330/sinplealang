@@ -1,5 +1,5 @@
 use crate::{env::Env, stmt::Stmt, utils, val::Val};
-use alloc::{string::String, vec, vec::Vec};
+use alloc::{string::String, vec::Vec};
 
 #[derive(Debug, PartialEq)]
 pub struct Block {
@@ -49,7 +49,7 @@ mod tests {
     use super::super::{BindingUsage, Expr, Number, Op};
     use super::*;
     use crate::binding_def::BindingDef;
-    use alloc::string::ToString;
+    use alloc::{string::ToString, vec};
 
     #[test]
     fn parse_empty_block() {
@@ -188,6 +188,7 @@ mod tests {
         );
     }
 
+    #[test]
     fn eval_block_using_bindings_from_parent_env() {
         let mut env = Env::default();
         env.store_binding("foo".to_string(), Val::Number(2));
