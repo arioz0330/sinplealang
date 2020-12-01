@@ -21,7 +21,7 @@ impl BindingDef {
         let (s, _) = utils::extract_ident(s)?;
         let (s, _) = utils::extract_whitespace(s);
 
-        let s = utils::tag("=", s, "Expected initialisation keyword `laik`")?;
+        let s = utils::tag("bilaik", s, "Expected initialisation keyword `laik`")?;
         let (s, _) = utils::extract_whitespace(s);
 
         let (s, val) = Expr::new(s)?;

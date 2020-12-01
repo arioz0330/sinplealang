@@ -15,6 +15,7 @@ pub use val::Val;
 
 use alloc::string::{String, ToString};
 
+#[derive(Debug)]
 pub struct Parse(stmt::Stmt);
 
 impl Parse {
