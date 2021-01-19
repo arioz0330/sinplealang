@@ -8,4 +8,7 @@ edition = "2018"
 
 [dependencies]
 sinplealang = {path = "../sinplealang"}
-bare-io = {version = "0.2.1", features = ["alloc", "nightly"]}
+
+[dependencies.bare-io]
+version = "0.2.1"
+features = ["alloc", "nightly"]

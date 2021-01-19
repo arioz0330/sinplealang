@@ -16,12 +16,9 @@ fn main() -> io::Result<()> {
 
         stdin.read_line(&mut input)?;
 
-
         match run(input.trim(), &mut env) {
-            Ok(Some(val)) => {
-                writeln!(stdout, "{}", val)?
-            },
-            Ok(None) => {},
+            Ok(Some(val)) => writeln!(stdout, "{}", val)?,
+            Ok(None) => {}
             Err(msg) => writeln!(stderr, "{}", msg)?,
         }
 
@@ -33,8 +30,8 @@ fn run(input: &str, env: &mut sinplealang::Env) -> Result<Option<sinplealang::Va
     let parse = sinplealang::parse(input).map_err(|msg| format!("Error: (parse) {}", msg))?;
 
     let evaluated = parse
-    .eval(env)
-    .map_err(|msg| format!("Error: (eval) {}", msg))?;
+        .eval(env)
+        .map_err(|msg| format!("Error: (eval) {}", msg))?;
 
     if evaluated == sinplealang::Val::Unit {
         Ok(None)
